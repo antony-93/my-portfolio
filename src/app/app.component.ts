@@ -1,10 +1,36 @@
 import { Component } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { Router, NavigationStart, NavigationEnd, NavigationError, NavigationCancel } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-portfolio';
+
+  constructor(private spinner: NgxSpinnerService,
+              private router: Router) {}
+
+  ngOnInit() {
+    this.doLoadingComponent()
+  }
+
+  doLoadingComponent() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        this.doSpinComponentLoad(true)
+      } else if (event instanceof NavigationEnd || event instanceof NavigationError || event instanceof NavigationCancel) {
+        this.doSpinComponentLoad(false)
+      }
+    });
+  }
+
+  doSpinComponentLoad(show: boolean) {
+    if (show) {
+      this.spinner.show("ComponentLoad");
+    } else {
+      this.spinner.hide("ComponentLoad");
+    }
+  }
 }

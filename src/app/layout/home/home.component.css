@@ -1,0 +1,15 @@
+.home-section-page {
+    /* background-image: var(--image-gradient),url(/static/media/home-bg.dc52d5d….jpg); */
+    background-position: top;
+    background-repeat: no-repeat;
+    padding-bottom: 30px!important;
+    padding-top: 30px!important;
+    position: relative;
+    z-index: -1;
+}
+
+.home-container-page {
+    color: #f5f5f5;
+    padding: 9rem 0 2rem!important;
+    text-align: left;
+}

@@ -1,1 +1,370 @@
-/* You can add global styles to this file, and also import other style files */
+app-root {
+  font-family: sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(95, 145, 255, 1);
+  border-radius: 12px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(25 42 62);
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.align-center {
+  display: flex;
+  justify-content: center;
+}
+
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+
+/* Margens à esquerda */
+.ml-0 {
+  margin-left: 0 !important;
+}
+
+.ml-1 {
+  margin-left: 0.25rem !important;
+}
+
+.ml-2 {
+  margin-left: 0.5rem !important;
+}
+
+.ml-3 {
+  margin-left: 1rem !important;
+}
+
+.ml-4 {
+  margin-left: 1.5rem !important;
+}
+
+.ml-5 {
+  margin-left: 3rem !important;
+}
+
+/* Variantes Responsivas */
+@media (min-width: 576px) {
+  .ml-sm-0 {
+    margin-left: 0 !important;
+  }
+
+  .ml-sm-1 {
+    margin-left: 0.25rem !important;
+  }
+
+  .ml-sm-2 {
+    margin-left: 0.5rem !important;
+  }
+
+  .ml-sm-3 {
+    margin-left: 1rem !important;
+  }
+
+  .ml-sm-4 {
+    margin-left: 1.5rem !important;
+  }
+
+  .ml-sm-5 {
+    margin-left: 3rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .ml-md-0 {
+    margin-left: 0 !important;
+  }
+
+  .ml-md-1 {
+    margin-left: 0.25rem !important;
+  }
+
+  .ml-md-2 {
+    margin-left: 0.5rem !important;
+  }
+
+  .ml-md-3 {
+    margin-left: 1rem !important;
+  }
+
+  .ml-md-4 {
+    margin-left: 1.5rem !important;
+  }
+
+  .ml-md-5 {
+    margin-left: 3rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .ml-lg-0 {
+    margin-left: 0 !important;
+  }
+
+  .ml-lg-1 {
+    margin-left: 0.25rem !important;
+  }
+
+  .ml-lg-2 {
+    margin-left: 0.5rem !important;
+  }
+
+  .ml-lg-3 {
+    margin-left: 1rem !important;
+  }
+
+  .ml-lg-4 {
+    margin-left: 1.5rem !important;
+  }
+
+  .ml-lg-5 {
+    margin-left: 3rem !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .ml-xl-0 {
+    margin-left: 0 !important;
+  }
+
+  .ml-xl-1 {
+    margin-left: 0.25rem !important;
+  }
+
+  .ml-xl-2 {
+    margin-left: 0.5rem !important;
+  }
+
+  .ml-xl-3 {
+    margin-left: 1rem !important;
+  }
+
+  .ml-xl-4 {
+    margin-left: 1.5rem !important;
+  }
+
+  .ml-xl-5 {
+    margin-left: 3rem !important;
+  }
+}
+
+/* Margens à direita */
+.mr-0 {
+  margin-right: 0 !important;
+}
+
+.mr-1 {
+  margin-right: 0.25rem !important;
+}
+
+.mr-2 {
+  margin-right: 0.5rem !important;
+}
+
+.mr-3 {
+  margin-right: 1rem !important;
+}
+
+.mr-4 {
+  margin-right: 1.5rem !important;
+}
+
+.mr-5 {
+  margin-right: 3rem !important;
+}
+
+/* Variantes Responsivas */
+@media (min-width: 576px) {
+  .mr-sm-0 {
+    margin-right: 0 !important;
+  }
+
+  .mr-sm-1 {
+    margin-right: 0.25rem !important;
+  }
+
+  .mr-sm-2 {
+    margin-right: 0.5rem !important;
+  }
+
+  .mr-sm-3 {
+    margin-right: 1rem !important;
+  }
+
+  .mr-sm-4 {
+    margin-right: 1.5rem !important;
+  }
+
+  .mr-sm-5 {
+    margin-right: 3rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .mr-md-0 {
+    margin-right: 0 !important;
+  }
+
+  .mr-md-1 {
+    margin-right: 0.25rem !important;
+  }
+
+  .mr-md-2 {
+    margin-right: 0.5rem !important;
+  }
+
+  .mr-md-3 {
+    margin-right: 1rem !important;
+  }
+
+  .mr-md-4 {
+    margin-right: 1.5rem !important;
+  }
+
+  .mr-md-5 {
+    margin-right: 3rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .mr-lg-0 {
+    margin-right: 0 !important;
+  }
+
+  .mr-lg-1 {
+    margin-right: 0.25rem !important;
+  }
+
+  .mr-lg-2 {
+    margin-right: 0.5rem !important;
+  }
+
+  .mr-lg-3 {
+    margin-right: 1rem !important;
+  }
+
+  .mr-lg-4 {
+    margin-right: 1.5rem !important;
+  }
+
+  .mr-lg-5 {
+    margin-right: 3rem !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mr-xl-0 {
+    margin-right: 0 !important;
+  }
+
+  .mr-xl-1 {
+    margin-right: 0.25rem !important;
+  }
+
+  .mr-xl-2 {
+    margin-right: 0.5rem !important;
+  }
+
+  .mr-xl-3 {
+    margin-right: 1rem !important;
+  }
+
+  .mr-xl-4 {
+    margin-right: 1.5rem !important;
+  }
+
+  .mr-xl-5 {
+    margin-right: 3rem !important;
+  }
+}
+
+/* Margem à direita automática */
+.mr-auto {
+  margin-right: auto !important;
+}
+
+/* Margem à esquerda automática */
+.ml-auto {
+  margin-left: auto !important;
+}
+
+/* Variantes Responsivas */
+@media (min-width: 576px) {
+  .mr-sm-auto {
+    margin-right: auto !important;
+  }
+
+  .ml-sm-auto {
+    margin-left: auto !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .mr-md-auto {
+    margin-right: auto !important;
+  }
+
+  .ml-md-auto {
+    margin-left: auto !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .mr-lg-auto {
+    margin-right: auto !important;
+  }
+
+  .ml-lg-auto {
+    margin-left: auto !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mr-xl-auto {
+    margin-right: auto !important;
+  }
+
+  .ml-xl-auto {
+    margin-left: auto !important;
+  }
+}
+
+.md-18 {
+  font-size: 18px !important;
+}
+
+.md-20 {
+  font-size: 20px !important;
+}
+
+.md-22 {
+  font-size: 22px !important;
+}
+
+.md-24 {
+  font-size: 24px !important;
+}

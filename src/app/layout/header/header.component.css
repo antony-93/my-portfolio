@@ -1,0 +1,54 @@
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar-item a {
+    font-size: 21px;
+    position: relative;
+    text-decoration: none; 
+}
+
+.select-neon {
+    background-color: rgb(23,32,44);
+    border-color: rgba(95, 145, 255, 1) !important;
+    height: 2.2rem;
+} 
+
+.navbar-item a::after {
+    background: rgba(95, 145, 255, 1);
+    border-radius: 16px;
+    bottom: -2px;
+    content: "";
+    display: block;
+    height: 5px;
+    left: 0;
+    position: absolute;
+    width: 0;
+    transition: all .3s ease-out 0s;
+}
+
+.navbar-item a:hover::after {
+    width: 100%;
+}
+
+.btn-link {
+    border-color: rgba(95, 145, 255, 1) !important;
+    height: 2.2rem !important;
+    width: 5rem;
+    background-color: #104E8B;
+}
+
+.sticky {
+    -webkit-backdrop-filter: blur(15px)!important;
+    backdrop-filter: blur(15px)!important;
+    background-color: #1b1a2ea9!important;
+    box-shadow: 0 10px 10px 0 rgba(9,5,29,.171)!important;
+}
+
+.navbar, .sticky {
+    transition: all .3s ease-out 0s!important;
+}
+  
+ul, ol {
+    list-style-type: none;
+}
