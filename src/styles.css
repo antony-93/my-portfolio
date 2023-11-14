@@ -25,6 +25,10 @@ body, html {
   background: rgb(25 42 62);
 }
 
+.text-blue-light {
+  color: rgba(95, 145, 255, 1) !important;
+}
+
 .text-right {
   text-align: right;
 }
