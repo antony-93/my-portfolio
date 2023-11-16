@@ -6,32 +6,32 @@
 
         <div class="collapse navbar-collapse">
             <ul class="ms-auto navbar-nav align-items-center">
-                <li class="navbar-item ml-5">
+                <li class="navbar-item ml-4">
                     <a class="d-flex navbar-link align-items-center text-white" href="/home">
                         <i class="material-icons-outlined mr-2">home</i>
                         {{ 'Home' | translate }}
                     </a>
                 </li>
-                <li class="navbar-item ml-5">
+                <li class="navbar-item ml-4">
                     <a class="d-flex align-items-center navbar-link text-white" href="#">
                         <i class="material-icons-outlined mr-2">person</i>
                         {{ 'About me' | translate }}
                     </a>
                 </li>
-                <li class="navbar-item ml-5">
+                <li class="navbar-item ml-4">
                     <a class="d-flex align-items-center navbar-link text-white" href="#">
                         <i class="material-icons-outlined mr-2">analytics</i>
                         {{ 'Projects' | translate }}
                     </a>
                 </li>
-                <li class="navbar-item ml-5">
+                <li class="navbar-item ml-4">
                     <a class="d-flex align-items-center navbar-link text-white" href="#">
                         <i class="material-icons-outlined mr-2">feed</i>
                         {{ 'Resume' | translate }}
                     </a>
                 </li>
-                <div class="ml-5 align-center">
-                    <button class="btn btn-link text-white mr-3">
+                <div class="align-center ml-4">
+                    <button class="btn btn-link text-white mr-3" (click)="doRedirectGitHub(url)">
                         <i class="material-icons md-20 mr-2">share</i>
                         <i class="material-icons align-top md-20">star</i>
                     </button>

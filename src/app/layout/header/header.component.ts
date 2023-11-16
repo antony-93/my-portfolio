@@ -9,6 +9,8 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  
+  url = 'https://github.com/antony-93/my-portfolio';
 
   headerForm: FormGroup = new FormGroup({})
   languageControl: FormControl = new FormControl('en')
@@ -91,6 +93,10 @@ export class HeaderComponent {
       this.doSetLanguageHeaderForm(language)
       this.doSetTranslation(language)
     }
+  }
+
+  doRedirectGitHub(url: string): void {
+    window.open(url, '_blank');
   }
 
   //#endregion
