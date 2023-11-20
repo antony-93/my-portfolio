@@ -19,7 +19,7 @@
     z-index: 0;
   }
   
-  $shooting-time: 3000ms;
+  $shooting-time: 4000ms;
   
   .night {
     position: relative;
@@ -33,7 +33,7 @@
     left: 50%;
     top: 50%;
     height: 2px;
-    background: linear-gradient(-45deg, rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
+    background: linear-gradient(-45deg, rgb(108 138 205), rgba(0, 0, 255, 0));
     border-radius: 999px;
     filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
     animation:

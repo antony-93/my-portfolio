@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeModule } from './home/home.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [HeaderComponent, LayoutComponent],
   imports: [

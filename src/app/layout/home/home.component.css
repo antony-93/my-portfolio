@@ -1,6 +1,6 @@
 .home-section-page {
-    /* background: url('/src/assets/home-bg.dc52d5d40a40b13154b0.jpg') top no-repeat; */
-    background-size: cover;
+    /* background-image: var(--image-gradient),url(/static/media/home-bg.dc52d5d….jpg);
+    background-position: top;*/
     padding-bottom: 30px !important;
     padding-top: 30px !important;
     position: relative;
@@ -14,8 +14,8 @@
 }
 
 .image-size {
-    max-height: 450px;
-    max-width: 100%;
+    max-height: 300px;
+    max-width: 80%;
 }
 
 .header-name {
@@ -35,7 +35,7 @@
 .typing::after {
     content: '';
     height: 10%;
-    padding: 1px 2px;
+    padding: 0px 2px;
     margin-left: 10px;
     background-color: #fff;
     animation: typing 1.2s ease infinite;

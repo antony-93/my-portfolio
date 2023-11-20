@@ -24,7 +24,8 @@ export class HomeComponent {
     const typed = new Typed(".typing", {
       strings: this.sentences,
       typeSpeed: 80,
-      backSpeed: 50,
+      backSpeed: 60,
+      backDelay: 2000,
       loop: true,
       showCursor: false,
     });

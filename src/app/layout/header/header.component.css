@@ -2,8 +2,7 @@
     text-decoration: none;
 }
 
-.navbar-item a {
-    font-size: 21px;
+.nav-item a {
     position: relative;
     text-decoration: none; 
 }
@@ -14,7 +13,7 @@
     height: 2.2rem;
 } 
 
-.navbar-item a::after {
+.nav-item a::after {
     background: rgba(95, 145, 255, 1);
     border-radius: 16px;
     bottom: -2px;
@@ -27,7 +26,7 @@
     transition: all .3s ease-out 0s;
 }
 
-.navbar-item a:hover::after {
+.nav-item a:hover::after {
     width: 100%;
 }
 
