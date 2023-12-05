@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Router, NavigationStart, NavigationEnd, NavigationError, NavigationCancel } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
 
@@ -16,6 +16,8 @@ export class AppComponent {
     this.doLoadingComponent()
   }
 
+  //#region === CONTROLE DE TELA ===
+  
   doLoadingComponent() {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
@@ -33,4 +35,7 @@ export class AppComponent {
       this.spinner.hide("ComponentLoad");
     }
   }
+  
+  //#endregion
+
 }

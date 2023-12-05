@@ -1,7 +1,7 @@
 import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { debounceTime, distinctUntilChanged } from 'rxjs';
+import { debounceTime, distinctUntilChanged, expand } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -9,95 +9,38 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  
+
   url = 'https://github.com/antony-93/my-portfolio';
 
-  headerForm: FormGroup = new FormGroup({})
-  languageControl: FormControl = new FormControl('en')
+  classLink: string = 'nav-link d-flex d-md-block d-lg-flex text-white'
+  classLinkIcon: string = 'material-icons-outlined mr-2 mr-md-0 mr-lg-1 mt-md-0 mt-1 align-center-md'
 
-  @Input() isSticky: boolean = false
+  expand: boolean = false
+  isSticky: boolean = false
+  
+  constructor() {}
 
-  constructor(private translate: TranslateService,) { }
+  ngOnInit() {}
 
-  ngOnInit() {
-    this.doCreateHeaderForm()
-  }
-
-  //#region === FUNCOES DO FORMULARIO ===
-
-  doCreateHeaderForm() {
-    const language: string = this.doGetLanguageLocalStorage()
-
-    if (language) {
-      this.languageControl = new FormControl(language)
-      this.doSetLanguage(language)
-    }
-
-    this.headerForm = new FormGroup({
-      language: this.languageControl
-    })
-
-    this.doActiveHeaderChange()
-  }
-
-  doActiveHeaderChange() {
-    this.languageControl?.valueChanges.pipe(
-      debounceTime(500),
-      distinctUntilChanged(),
-      ).subscribe((value) => {
-        this.doSetLanguage(value);
-    });
-  }
-
-  doSetLanguageHeaderForm(language: string) {
-    if (language) {
-      this.headerForm.controls['language'].setValue(language)
-    }
-  }
-
-  //#endregion
-
-  //#region === FUNÇÕES DA TRADUÇÃO ===
-
-  doSetLanguage(language: string) {
-    if (language) {
-      localStorage.setItem("language", language)
-      this.doSetTranslation(language)
-    }
-  }
-
-  doSetTranslation(language: string) {
-    if (language) this.translate.use(language)
-  }
-
-  doGetLanguageLocalStorage(): string {
-    let check: string = 'en'
-
-    const language = localStorage.getItem("language")
-    
-    if (language) check = language
-    if (!language) localStorage.setItem("language", check)
-
-    return check
-  }
-
-  //#endregion
-
-  //#region === FUNÇÕES DAS TAB ===
-
-  @HostListener('window:focus', ['$event'])
-  onFocusPage(): void {
-    const language = this.doGetLanguageLocalStorage()
-
-    if (language && language != this.headerForm.value.language){
-      this.doSetLanguageHeaderForm(language)
-      this.doSetTranslation(language)
-    }
-  }
+  //#region === FUNCÕES DE CONTROLE DE TELA ===
 
   doRedirectGitHub(url: string): void {
     window.open(url, '_blank');
   }
 
+  doExpandNavbarSm() {
+    if (this.expand) {
+      this.expand = false
+    } else {
+      this.expand = true
+    }
+  }
+
+  @HostListener('window:scroll', [])
+  onScroll() {
+    this.isSticky = window.scrollY > 0;
+  }
+
   //#endregion
+
 }

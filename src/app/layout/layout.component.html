@@ -1,9 +1,13 @@
-<div>
+<div class="h-100">
     <header>
-        <app-header [isSticky]="sticky"></app-header>
+        <app-header></app-header>
     </header>
 
-    <section id="page-overflow" class="section-full-page overflow-auto h-100">
-            <router-outlet></router-outlet>
+    <section>
+        <router-outlet></router-outlet>
     </section>
+
+    <footer>
+        <app-footer></app-footer>
+    </footer>
 </div>

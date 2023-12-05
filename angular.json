@@ -27,9 +27,13 @@
             "styles": [
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/material-icons/iconfont/material-icons.css"
+              "node_modules/material-icons/iconfont/material-icons.css",
+              "node_modules/flagpack/dist/flagpack.css",
+              "@fortawesome/fontawesome-free/css/all.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]            
           },
           "configurations": {
             "production": {
@@ -91,9 +95,13 @@
             "styles": [
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/material-icons/iconfont/material-icons.css"
+              "@fortawesome/fontawesome-free/css/all.css",
+              "node_modules/material-icons/iconfont/material-icons.css",
+              "node_modules/flagpack/dist/flagpack.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]            
           }
         }
       }

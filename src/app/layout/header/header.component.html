@@ -1,50 +1,62 @@
-<nav class="navbar navbar-expand-md navbar-light fixed-top" [ngClass]="{'sticky': isSticky}">
+<nav class="navbar navbar-expand-md fixed-top" [ngClass]="{'sticky': isSticky}">
     <div class="container">
-        <a class="fs-2 navbar-brand font-weight-bold text-blue-light" href="javascript:void(0)">
+        <a class="font-weight-bold fs-2 text-blue-light navbar-brand" href="#">
             My portfolio
         </a>
 
-        <div class="collapse navbar-collapse">
-            <ul class="ms-auto navbar-nav align-items-center">
-                <li class="nav-item ml-4 font-weight-bold">
-                    <a class="d-flex nav-link align-items-center text-white" href="/home">
-                        <i class="material-icons-outlined mr-2">home</i>
+        <div class="p-0 d-flex d-md-none navbar-toggler mt-1 align-items-center border-0">
+            <app-combobox-language [responsive]="true"></app-combobox-language>
+
+            <a class="text-blue-light border-0 navbar-toggler" type="button" style="width: 48px;" (click)="doExpandNavbarSm()">
+                <i class="fs-2 fa-solid" [ngClass]="{'fa-bars' : !expand, 'fa-xmark': expand}"></i>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" [ngClass]="{'show': expand, 'notShowing': !expand}">
+            <ul class="ml-auto navbar-nav align-items-center-md">
+                <li class="nav-item ml-md-4 font-weight-bold">
+                    <a [class]="classLink" href="/home">
+                        <i [class]="classLinkIcon" class="icon-home"></i>
                         {{ 'Home' | translate }}
                     </a>
                 </li>
-                <li class="nav-item ml-4 font-weight-bold">
-                    <a class="d-flex align-items-center nav-link text-white" href="#">
-                        <i class="material-icons-outlined mr-2">person</i>
+
+                <li class="nav-item ml-md-4 font-weight-bold">
+                    <a [class]="classLink" href="#">
+                        <i [class]="classLinkIcon" class="icon-people"></i>
                         {{ 'About' | translate }}
                     </a>
                 </li>
-                <li class="nav-item ml-4 font-weight-bold">
-                    <a class="d-flex align-items-center nav-link text-white" href="#">
-                        <i class="material-icons-outlined mr-2">analytics</i>
+
+                <li class="nav-item ml-md-4 font-weight-bold">
+                    <a [class]="classLink" href="#">
+                        <i [class]="classLinkIcon" class="icon-analytics"></i>
                         {{ 'Projects' | translate }}
                     </a>
                 </li>
-                <li class="nav-item ml-4 font-weight-bold">
-                    <a class="d-flex align-items-center nav-link text-white" href="#">
-                        <i class="material-icons-outlined mr-2">feed</i>
+
+                <li class="nav-item d-flex align-items-center ml-md-4 font-weight-bold">
+                    <a [class]="classLink" class="mr-2 mr-md-0" href="#">
+                        <i [class]="classLinkIcon" class="icon-feed"></i>
                         {{ 'Resume' | translate }}
                     </a>
-                </li>
-                <div class="align-center ml-4 font-weight-bold">
-                    <button class="btn btn-link text-white mr-3" (click)="doRedirectGitHub(url)">
-                        <i class="material-icons md-20 mr-2">share</i>
-                        <i class="material-icons align-top md-20">star</i>
-                    </button>
 
-                    <div [formGroup]="headerForm">
-                        <select title="{{ 'Select your language' | translate }}" class="border text-left btn btn-sm text-white select-neon" formControlName="language">
-                            <option value="en">{{ 'English' | translate }}</option>
-                            <option value="pt-BR">{{ 'Portuguese' | translate}} (pt-BR)</option>
-                            <option value="it">{{ 'Italian' | translate }}</option>
-                            <option value="es">{{ 'Spanish' | translate}}</option>
-                        </select>                                         
-                    </div>
-                </div>
+                    <button class="btn d-md-none ml-auto mr-2 btn-sm btn-link text-white" (click)="doRedirectGitHub(url)">
+                        <i class="md-18 ml-1 mr-1 fa-brands fa-github"></i>
+                        <i class="md-16 ml-1 mr-1 fas fa-code-branch"></i>
+                    </button>
+                </li>
+
+                <li class="d-md-inline d-none ml-md-4">
+                    <button class="btn btn-sm btn-link text-white" (click)="doRedirectGitHub(url)">
+                        <i class="md-18 ml-1 mr-1 fa-brands fa-github"></i>
+                        <i class="md-16 ml-1 mr-1 fas fa-code-branch"></i>
+                    </button>
+                </li>
+
+                <li class="d-md-inline d-none ml-md-4">
+                    <app-combobox-language [responsive]="true"></app-combobox-language>
+                </li>
             </ul>
         </div>
     </div>

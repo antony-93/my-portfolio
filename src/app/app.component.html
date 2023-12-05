@@ -1,17 +1,8 @@
-<div>
-    <ngx-spinner name="ComponentLoad" bdColor="rgb(23,32,44)" size="medium" color="#5f91ff" type="ball-spin-clockwise" [fullScreen]="true">
-        <p style="color: white" > Loading... </p>
+<div class="fullScreen">
+    <ngx-spinner name="ComponentLoad" bdColor="rgb(23,32,44)" size="medium" color="#5f91ff" type="ball-spin-clockwise"
+        [fullScreen]="true">
+        <p style="color: white"> Loading... </p>
     </ngx-spinner>
 
-
-    <!-- <div class="night">
-        <div class="shooting_star"></div>
-        <div class="shooting_star"></div>
-        <div class="shooting_star"></div>
-        <div class="shooting_star"></div>
-        <div class="shooting_star"></div>
-    </div> -->
-    <div class="view overflow-auto">
-        <router-outlet></router-outlet>
-    </div>
+    <router-outlet></router-outlet>
 </div>

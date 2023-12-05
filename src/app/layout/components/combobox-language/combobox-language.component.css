@@ -1,0 +1,16 @@
+.dropdown.show>a {
+    color: #fff;
+    background-color: rgba(91,146,255,0.4);
+}
+
+@media (min-width: 992px) {
+    .h3-lg {
+        height: auto !important
+    }
+}
+
+@media (min-width: 768px){
+    .h3-md {
+        height: 3.3rem;
+    }
+}

@@ -1,0 +1,27 @@
+<div class="dropdown">
+    <a class="btn btn-sm" [ngClass]="{'h3-md h3-lg d-md-table-cell': responsive}" href="#" id="navbarDropdown0" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="fp fp-md fp-rounded mt-lg-auto" [class]="flagClass"></span>
+    </a>
+
+    <div class="dropdown-menu dropdown-menu-right mt-3" aria-labelledby="navbarDropdown0">
+        <a class="dropdown-item" href="javascript:void(0)" (click)="doSetLanguage('pt-BR')">
+            <span class="md-14 fp fp-md fp-rounded br"></span>
+            <span class="ml-2">{{ 'Brazil' | translate }}</span>
+        </a>
+
+        <a class="dropdown-item" href="javascript:void(0)" (click)="doSetLanguage('en')">
+            <span class="md-14 fp fp-md fp-rounded us"></span>
+            <span class="ml-2">{{ 'United States' | translate }}</span>
+        </a>
+
+        <a class="dropdown-item" href="javascript:void(0)" (click)="doSetLanguage('es')">
+            <span class="md-14 fp fp-md fp-rounded es"></span>
+            <span class="ml-2">{{ 'Spain' | translate }}</span>
+        </a>
+
+        <a class="dropdown-item" href="javascript:void(0)" (click)="doSetLanguage('it')">
+            <span class="md-14 fp fp-md fp-rounded it"></span>
+            <span class="ml-2">{{ 'Italy' | translate }}</span>
+        </a>
+    </div>
+</div>
