@@ -12,8 +12,8 @@ export class HeaderComponent {
 
   url = 'https://github.com/antony-93/my-portfolio';
 
-  classLink: string = 'nav-link d-flex d-md-block d-lg-flex text-white'
-  classLinkIcon: string = 'material-icons-outlined mr-2 mr-md-0 mr-lg-1 mt-md-0 mt-1 align-center-md'
+  classLink: string = 'nav-link d-flex ms-md-4 d-md-block d-lg-flex text-white'
+  classLinkIcon: string = 'material-icons-outlined me-2 me-md-0 me-lg-1 mt-md-0 mt-1 align-center-md'
 
   expand: boolean = false
   isSticky: boolean = false

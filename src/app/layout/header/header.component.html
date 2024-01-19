@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md fixed-top" [ngClass]="{'sticky': isSticky}">
-    <div class="container">
+    <div class="container p-0">
         <a class="font-weight-bold fs-2 text-blue-light navbar-brand" href="#">
             My portfolio
         </a>
@@ -13,48 +13,48 @@
         </div>
 
         <div class="collapse navbar-collapse" [ngClass]="{'show': expand, 'notShowing': !expand}">
-            <ul class="ml-auto navbar-nav align-items-center-md">
-                <li class="nav-item ml-md-4 font-weight-bold">
-                    <a [class]="classLink" href="/home">
+            <ul class="ms-auto navbar-nav align-items-center-md">
+                <li class="nav-item font-weight-bold">
+                    <a [class]="classLink" routerLink="home">
                         <i [class]="classLinkIcon" class="icon-home"></i>
                         {{ 'Home' | translate }}
                     </a>
                 </li>
 
-                <li class="nav-item ml-md-4 font-weight-bold">
-                    <a [class]="classLink" href="#">
+                <li class="nav-item font-weight-bold">
+                    <a [class]="classLink" routerLink="about">
                         <i [class]="classLinkIcon" class="icon-people"></i>
                         {{ 'About' | translate }}
                     </a>
                 </li>
 
-                <li class="nav-item ml-md-4 font-weight-bold">
-                    <a [class]="classLink" href="#">
+                <li class="nav-item font-weight-bold">
+                    <a [class]="classLink" routerLink="projects">
                         <i [class]="classLinkIcon" class="icon-analytics"></i>
                         {{ 'Projects' | translate }}
                     </a>
                 </li>
 
-                <li class="nav-item d-flex align-items-center ml-md-4 font-weight-bold">
-                    <a [class]="classLink" class="mr-2 mr-md-0" href="#">
+                <li class="nav-item d-flex align-items-center font-weight-bold">
+                    <a [class]="classLink" class="me-2 me-md-0" routerLink="resume">
                         <i [class]="classLinkIcon" class="icon-feed"></i>
                         {{ 'Resume' | translate }}
                     </a>
 
                     <button class="btn d-md-none ml-auto mr-2 btn-sm btn-link text-white" (click)="doRedirectGitHub(url)">
-                        <i class="md-18 ml-1 mr-1 fa-brands fa-github"></i>
-                        <i class="md-16 ml-1 mr-1 fas fa-code-branch"></i>
+                        <i class="md-18 ms-1 me-1 fa-brands fa-github"></i>
+                        <i class="md-16 ms-1 me-1 fas fa-code-branch"></i>
                     </button>
                 </li>
 
-                <li class="d-md-inline d-none ml-md-4">
+                <li class="d-md-inline d-none ms-md-4">
                     <button class="btn btn-sm btn-link text-white" (click)="doRedirectGitHub(url)">
-                        <i class="md-18 ml-1 mr-1 fa-brands fa-github"></i>
-                        <i class="md-16 ml-1 mr-1 fas fa-code-branch"></i>
+                        <i class="md-18 ms-1 me-1 fa-brands fa-github"></i>
+                        <i class="md-16 ms-1 me-1 fas fa-code-branch"></i>
                     </button>
                 </li>
 
-                <li class="d-md-inline d-none ml-md-4">
+                <li class="d-md-inline d-none ms-md-4">
                     <app-combobox-language [responsive]="true"></app-combobox-language>
                 </li>
             </ul>

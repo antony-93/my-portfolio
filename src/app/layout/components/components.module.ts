@@ -8,8 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
   declarations: [ComboboxLanguageComponent],
   imports: [
-    CommonModule,
-    TranslateModule
+    CommonModule
   ],
   exports: [ComboboxLanguageComponent]
 })
