@@ -1,29 +1,49 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Flag } from './flag/flag.model';
+import { BehaviorSubject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-combobox-language',
   templateUrl: './combobox-language.component.html',
   styleUrls: ['./combobox-language.component.css']
 })
-export class ComboboxLanguageComponent {
+export class ComboboxLanguageComponent implements OnInit, OnDestroy {
 
-  flagClass: string = 'br'
+  flags: Flag[] = [
+    {flag: 'br', code: 'pt-BR', title: 'Brasil'},
+    {flag: 'us', code: 'en', title: 'United States'},
+    {flag: 'es', code: 'es', title: 'España'},
+    {flag: 'it', code: 'it', title: 'Italia'}
+  ]
 
+  flagClassSelected: string = 'br'
+  
   @Input() responsive: boolean = false
+
+  @Input() languageCode$: BehaviorSubject<string | null> | undefined
+  private languageCodeSub$: Subscription | undefined
+
+  @Output() onSelectFlag: EventEmitter<string> = new EventEmitter<string>()
 
   constructor(private translate: TranslateService) {}
 
   ngOnInit() {
     this.doCheckLanguageStorage()
     this.doListenerLanguageStorage()
+    this.doWaitLanguage()
+  }
+
+  ngOnDestroy() {
+    this.doUnsubscribeLanguageSub()
   }
 
   //#region === FUNCOES DO TRANSLATE ===
 
   doSetLanguage(code: string) {
+    this.doEmitCodeSelectedFlag(code)
     this.doSetLanguageInStorage(code)
-    this.doSetFlagClassByCode(code)
+    this.doSetFlagClassSelectedByCode(code)
     this.doSetTranslation(code)
   }
 
@@ -40,7 +60,7 @@ export class ComboboxLanguageComponent {
 
     if (!language || language == '') language = 'pt-BR'
 
-    this.doSetFlagClassByCode(language)
+    this.doSetFlagClassSelectedByCode(language)
     this.doSetTranslation(language)
   }
 
@@ -50,7 +70,7 @@ export class ComboboxLanguageComponent {
 
   onLanguageStorageChange(event: StorageEvent) {
     if (event.key == 'language') {
-      this.doSetFlagClassByCode(event.newValue)
+      this.doSetFlagClassSelectedByCode(event.newValue)
       this.doSetTranslation(event.newValue)
     }
   }
@@ -61,9 +81,32 @@ export class ComboboxLanguageComponent {
 
   //#endregion
 
+  //#region === FUNCOES EVENTOS ===
+
+  doWaitLanguage() {
+    if (!this.languageCode$) return;
+
+    this.languageCodeSub$ = this.languageCode$.subscribe(res => {
+      if (res) {
+        this.doSetFlagClassSelectedByCode(res)
+        this.doSetTranslation(res)
+      }
+    })
+  }
+
+  doUnsubscribeLanguageSub() {
+    if (this.languageCodeSub$) this.languageCodeSub$.unsubscribe()
+  }
+
+  doEmitCodeSelectedFlag(code: string) {
+    this.onSelectFlag.emit(code)
+  }
+
+  //#endregion
+
   //#region === FUNCOES DE CONTROLE DE TELA ===
 
-  doSetFlagClassByCode(code: string | null) {
+  doSetFlagClassSelectedByCode(code: string | null) {
     let className: string = ''
 
     if (code == 'pt-BR') className = 'br'
@@ -71,7 +114,7 @@ export class ComboboxLanguageComponent {
     if (code == 'es') className = 'es'
     if (code == 'it') className = 'it'
 
-    if (className && className != '') this.flagClass = className
+    if (className && className != '') this.flagClassSelected = className
   }
 
   //#endregion
