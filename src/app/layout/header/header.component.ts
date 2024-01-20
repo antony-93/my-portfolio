@@ -1,7 +1,6 @@
-import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { TranslateService } from '@ngx-translate/core';
-import { debounceTime, distinctUntilChanged, expand } from 'rxjs';
+import { Component, HostListener } from '@angular/core';
+import { MenuNavigation } from './components-header/menu-navigation/menu-navigation.model';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -10,22 +9,35 @@ import { debounceTime, distinctUntilChanged, expand } from 'rxjs';
 })
 export class HeaderComponent {
 
-  url = 'https://github.com/antony-93/my-portfolio';
-
-  classLink: string = 'nav-link d-flex ms-md-4 d-md-block d-lg-flex text-white'
-  classLinkIcon: string = 'material-icons-outlined me-2 me-md-0 me-lg-1 mt-md-0 mt-1 align-center-md'
+  navigations: MenuNavigation[] = [
+    { title: 'Home', icon: 'icon-home', link: '/home'},
+    { title: 'About', icon: 'icon-people', link: '/about'},
+    { title: 'Projects', icon: 'icon-analytics', link: '/Projects'},
+    { title: 'Resume', icon: 'icon-feed', link: '/Resume'},
+  ]
 
   expand: boolean = false
   isSticky: boolean = false
   
-  constructor() {}
+  codeFlagTab = new BehaviorSubject<string | null>(null)
+  codeFlagTouch = new BehaviorSubject<string | null>(null)
+  
+  //#region === FUNCOES EVENTOS ===
 
-  ngOnInit() {}
+  doNextCodeFlagTab(code: string) {
+    this.codeFlagTab.next(code)
+  }
+
+  doNextCodeFlagTouch(code: string) {
+    this.codeFlagTouch.next(code)
+  }
+
+  //#endregion
 
   //#region === FUNCÕES DE CONTROLE DE TELA ===
 
-  doRedirectGitHub(url: string): void {
-    window.open(url, '_blank');
+  doRedirectGitHub() {
+    window.open('https://github.com/antony-93/my-portfolio', '_blank');
   }
 
   doExpandNavbarSm() {
@@ -42,5 +54,4 @@ export class HeaderComponent {
   }
 
   //#endregion
-
 }

@@ -33,31 +33,4 @@
     .align-items-center-md {
         align-items: center!important;
     }
-
-    .align-center-md {
-        display: flex !important;
-        justify-content: center;
-    }
-
-    .nav-item a {
-        position: relative;
-        text-decoration: none; 
-    }
-
-    .nav-item a::after {
-        background: rgba(95, 145, 255, 1);
-        border-radius: 16px;
-        bottom: -2px;
-        content: "";
-        display: block;
-        height: 5px;
-        left: 0;
-        position: absolute;
-        width: 0;
-        transition: all .3s ease-out 0s;
-    }
-    
-    .nav-item a:hover::after {
-        width: 100%;
-    }
 }

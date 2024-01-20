@@ -8,13 +8,15 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { ComponentsModule } from './components/components.module';
+import { HeaderModule } from './header/header.module';
 
 @NgModule({
-  declarations: [LayoutComponent, HeaderComponent, FooterComponent],
+  declarations: [LayoutComponent, FooterComponent],
   imports: [
     CommonModule,
     LayoutRoutingModule,
     HomeModule,
+    HeaderModule,
     TranslateModule,
     FormsModule,
     ReactiveFormsModule,
