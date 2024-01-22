@@ -5,15 +5,16 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ComponentsModule } from '../components/components.module';
 import { MenuNavigationComponent } from './components-header/menu-navigation/menu-navigation.component';
 import { RouterModule } from '@angular/router';
+import { NavItemComponent } from './components-header/nav-item/nav-item.component';
 
 @NgModule({
-  declarations: [HeaderComponent, MenuNavigationComponent],
+  declarations: [HeaderComponent, MenuNavigationComponent, NavItemComponent],
   imports: [
     CommonModule,
     TranslateModule,
     ComponentsModule,
     RouterModule,
   ],
-  exports: [HeaderComponent, MenuNavigationComponent]
+  exports: [HeaderComponent, MenuNavigationComponent, NavItemComponent]
 })
 export class HeaderModule { }

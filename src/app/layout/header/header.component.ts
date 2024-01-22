@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { MenuNavigation } from './components-header/menu-navigation/menu-navigation.model';
+import { MenuNavigation } from './components-header/nav-item/menu-navigation.model';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
+  
   navigations: MenuNavigation[] = [
     { title: 'Home', icon: 'icon-home', link: '/home'},
     { title: 'About', icon: 'icon-people', link: '/about'},
