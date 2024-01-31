@@ -8,10 +8,10 @@ import { Component, Input } from '@angular/core';
 export class NavItemComponent {
 
   @Input() title: string = "Não específicado"
-  @Input() icon: string = "Não específicado"
-  @Input() link: string = ""
+  @Input() icon: string | undefined
+  @Input() link: string | undefined
 
-  classLink: string = 'nav-link d-flex ms-md-4 d-md-block d-lg-flex text-white'
-  classLinkIcon: string = 'material-icons-outlined me-2 me-md-0 me-lg-1 mt-md-0 mt-1 align-center-md'
+  classLink: string = ''
+  classLinkIcon: string = 'material-icons-outlined'
   
 }

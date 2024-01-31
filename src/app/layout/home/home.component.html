@@ -1,0 +1,39 @@
+<div class="container pt-5 mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center font-weight-bold" style="font-size: 5rem;">
+                {{ 'Your next developer' | translate}}
+                <br>
+                <span class="main-color">
+                    Full Stack ;)
+                </span>
+            </h1>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-12 align-center">
+            <p class="text-center" style="max-width: 500px;">
+                {{ 'Hi! My name is Antony Luiz Cechinel, I`m 19 years old, I work as a Full Stack Angular, Node.js and TypeORM developer!' | translate}}
+            </p>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-6">
+            <button class="btn float-end text-white border-0 main-color"
+                (click)="doRedirectLink('https://github.com/antony-93')">
+                <i class="fa-brands fa-github fs-6"></i>
+                Github
+            </button>
+        </div>
+
+        <div class="col-6">
+            <button class="btn text-white main-color border-0"
+                (click)="doRedirectLink('https://www.linkedin.com/in/antony-luiz-cechinel-789082222/')">
+                <i class="fa-brands fa-linkedin fs-6"></i>
+                Linkedin
+            </button>
+        </div>
+    </div>
+</div>

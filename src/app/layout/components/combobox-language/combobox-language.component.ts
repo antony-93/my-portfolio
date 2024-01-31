@@ -24,8 +24,6 @@ export class ComboboxLanguageComponent implements OnInit, OnDestroy {
   @Input() languageCode$: BehaviorSubject<string | null> | undefined
   private languageCodeSub$: Subscription | undefined
 
-  @Output() onSelectFlag: EventEmitter<string> = new EventEmitter<string>()
-
   constructor(private translate: TranslateService) {}
 
   ngOnInit() {
@@ -41,7 +39,6 @@ export class ComboboxLanguageComponent implements OnInit, OnDestroy {
   //#region === FUNCOES DO TRANSLATE ===
 
   doSetLanguage(code: string) {
-    this.doEmitCodeSelectedFlag(code)
     this.doSetLanguageInStorage(code)
     this.doSetFlagClassSelectedByCode(code)
     this.doSetTranslation(code)
@@ -96,10 +93,6 @@ export class ComboboxLanguageComponent implements OnInit, OnDestroy {
 
   doUnsubscribeLanguageSub() {
     if (this.languageCodeSub$) this.languageCodeSub$.unsubscribe()
-  }
-
-  doEmitCodeSelectedFlag(code: string) {
-    this.onSelectFlag.emit(code)
   }
 
   //#endregion

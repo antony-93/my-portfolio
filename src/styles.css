@@ -1,12 +1,51 @@
-body {
-  background: #f5f5f5;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  font-family: "Inter", sans-serif;
+:root {
+  --background-color: #1e293b;
+  --text-color: #efefef;
+  --btn-theme-hover: rgb(255 255 255 / 20%);
+  --main-color: #7e80ff; 
+  --main-color-hover: #5759d6;
 }
 
-.button {
-  font-family: inherit;
+.dark_theme {
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+.light_theme {
+  --background-color: #efefef;
+  --text-color: #1e293b;
+  --main-color: #6366f1;
+  --btn-theme-hover: rgb(118 118 118 / 20%);
+}
+
+body {
+  background: var(--background-color) !important;
+  color: var(--text-color) !important;
+}
+
+a {
+  color: var(--text-color) !important;
+  text-decoration: none !important;
+}
+
+button.btn-theme:hover{
+  background-color: var(--btn-theme-hover);
+}
+
+button.main-color {
+  background-color: var(--main-color);
+}
+
+button.main-color:hover, button.main-color:active {
+  background-color: var(--main-color-hover) !important;
+}
+
+h1.main-color, a.main-color, span.main-color {
+  color: var(--main-color) !important;
+}
+
+.w-30 {
+  width: 30% !important;
 }
 
 .text-right {
@@ -82,18 +121,6 @@ body {
 }
 ::-webkit-scrollbar-track {
   background: rgb(25 42 62);
-}
-
-.main-color {
-  color: #6366f1 !important;
-}
-
-.bg-dark-theme {
-  background: #142136;
-}
-
-.bg-light-theme {
-  background: #f5f5f5;
 }
 
 .font-weight-bold {

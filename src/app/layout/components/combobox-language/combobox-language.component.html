@@ -3,7 +3,7 @@
         <span class="fp fp-md fp-rounded mt-lg-auto" [class]="flagClassSelected"></span>
     </a>
 
-    <div class="dropdown-menu dropdown-menu-right mt-3" aria-labelledby="navbarDropdown0">
+    <div class="dropdown-menu dropdown-menu-right border-0 mt-3" aria-labelledby="navbarDropdown0">
         <app-flag *ngFor="let item of flags" [flag]="item.flag" [title]="item.title" (onClick)="doSetLanguage(item.code)"></app-flag>
     </div>
 </div>

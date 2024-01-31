@@ -1,59 +1,25 @@
 
 <header>
     <nav class="navbar">
-        <div class="container mt-2 align-items-baseline">
-            <a class="navbar-brand main-color font-weight-bold" routerLink="/home">
-                <span class="fs-2"><</span>
-                <span class="ms-1 fs-3">Portfolio /</span>
-                <span class="fs-2">></span>
+        <div class="container mt-2">
+            <a class="navbar-brand main-color font-weight-bold fs-2" routerLink="/home">
+                {{ "Portfolio { }" }} 
             </a>
     
-            <ul>
-                <!-- <app-nav-item></app-nav-item> -->
+            <ul class="nav nav-underline align-items-center">
+                <app-nav-item *ngFor="let item of navigations" [icon]="item.icon" [title]="item.title" [link]="item.link"></app-nav-item>
 
-                <!-- <app-combobox-language 
+                <app-combobox-language 
                     [responsive]="true" 
-                    [languageCode$]="codeFlagTouch" 
-                    (onSelectFlag)="doNextCodeFlagTab($event)">
-                </app-combobox-language> -->
+                    [languageCode$]="codeFlagTouch" >
+                </app-combobox-language>
+
+                <li class="nav-item">
+                    <button class="btn btn-sm align-center btn-theme border-0" [ngClass]="{'text-white': mode == 'dark_mode'}" (click)="doAlternateMode(mode)">
+                        <i class="material-icons">{{ mode }}</i>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
 </header>
-<!-- <nav class="navbar navbar-expand-md fixed-top" [ngClass]="{'sticky': isSticky}">
-    <div class="container">
-        <a class="font-weight-bold fs-2 text-blue-light navbar-brand" href="#">
-            {{ headerTitle }}
-        </a>
-
-        <div class="p-0 d-flex d-md-none navbar-toggler mt-1 align-items-center border-0">
-            <app-combobox-language 
-                [responsive]="true" 
-                [languageCode$]="codeFlagTab" 
-                (onSelectFlag)="doNextCodeFlagTouch($event)">
-            </app-combobox-language>
-
-            <a class="text-blue-light border-0 navbar-toggler" type="button" style="width: 48px;" (click)="doExpandNavbarSm()">
-                <i class="fs-2 fa-solid" [ngClass]="{'fa-bars' : !expand, 'fa-xmark': expand}"></i>
-            </a>
-        </div>
-
-        <div class="collapse navbar-collapse" [ngClass]="{'show': expand, 'notShowing': !expand}">
-            <ul class="ms-auto navbar-nav align-items-center-md">
-                <app-menu-navigation *ngFor="let item of navigations" 
-                    [icon]="item.icon" 
-                    [title]="item.title" 
-                    [link]="item.link">
-                </app-menu-navigation>
-
-                <li class="d-md-inline d-none ms-md-4">
-                    <app-combobox-language 
-                        [responsive]="true" 
-                        [languageCode$]="codeFlagTouch" 
-                        (onSelectFlag)="doNextCodeFlagTab($event)">
-                    </app-combobox-language>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav> -->
