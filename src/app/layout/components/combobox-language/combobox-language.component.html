@@ -1,7 +1,7 @@
 <div class="dropdown">
-    <a class="btn btn-sm" [ngClass]="{'h3-md h3-lg d-md-table-cell': responsive}" href="#" id="navbarDropdown0" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button class="btn btn-sm btn-theme border-0" href="#" id="navbarDropdown0" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="fp fp-md fp-rounded mt-lg-auto" [class]="flagClassSelected"></span>
-    </a>
+    </button>
 
     <div class="dropdown-menu dropdown-menu-right border-0 mt-3" aria-labelledby="navbarDropdown0">
         <app-flag *ngFor="let item of flags" [flag]="item.flag" [title]="item.title" (onClick)="doSetLanguage(item.code)"></app-flag>

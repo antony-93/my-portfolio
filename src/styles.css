@@ -1,9 +1,10 @@
 :root {
-  --background-color: #1e293b;
-  --text-color: #efefef;
-  --btn-theme-hover: rgb(255 255 255 / 20%);
   --main-color: #7e80ff; 
   --main-color-hover: #5759d6;
+  --background-color: #1e293b;
+  --text-color: #efefef;
+  --card-bg-color: #31363f ;
+  --btn-theme-hover: rgb(255 255 255 / 20%);
 }
 
 .dark_theme {
@@ -12,36 +13,53 @@
 }
 
 .light_theme {
+  --main-color: #6366f1;
   --background-color: #efefef;
   --text-color: #1e293b;
-  --main-color: #6366f1;
+  --card-bg-color: #fff;
   --btn-theme-hover: rgb(118 118 118 / 20%);
 }
 
 body {
   background: var(--background-color) !important;
-  color: var(--text-color) !important;
 }
 
-a {
-  color: var(--text-color) !important;
+li, a {
   text-decoration: none !important;
 }
 
-button.btn-theme:hover{
-  background-color: var(--btn-theme-hover);
+a, i, p, h1, h2, h3, h4, h5, span {
+  color: var(--text-color) !important;
 }
 
-button.main-color {
-  background-color: var(--main-color);
+button, button > i {
+  color: #efefef !important;
 }
 
-button.main-color:hover, button.main-color:active {
+button:hover {
   background-color: var(--main-color-hover) !important;
 }
 
-h1.main-color, a.main-color, span.main-color {
+button, .card.main-color {
+  background-color: var(--main-color) !important;
+}
+
+.card {
+  background-color: var(--card-bg-color) !important;
+}
+
+.main-color {
   color: var(--main-color) !important;
+}
+
+.btn-theme, .btn-theme > i {
+  height: 32px !important;
+  background-color: transparent !important;
+  color: var(--text-color) !important;
+}
+
+.btn-theme:hover{
+  background-color: var(--btn-theme-hover) !important;
 }
 
 .w-30 {
@@ -109,18 +127,6 @@ h1.main-color, a.main-color, span.main-color {
 
 .icon-feed::before{
   content: "feed"
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(95, 145, 255, 1);
-  border-radius: 12px;
-}
-::-webkit-scrollbar-track {
-  background: rgb(25 42 62);
 }
 
 .font-weight-bold {

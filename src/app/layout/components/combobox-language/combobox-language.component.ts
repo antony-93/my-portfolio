@@ -19,8 +19,6 @@ export class ComboboxLanguageComponent implements OnInit, OnDestroy {
 
   flagClassSelected: string = 'br'
   
-  @Input() responsive: boolean = false
-
   @Input() languageCode$: BehaviorSubject<string | null> | undefined
   private languageCodeSub$: Subscription | undefined
 

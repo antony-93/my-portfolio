@@ -7,12 +7,13 @@
             </a>
     
             <ul class="nav nav-underline align-items-center">
-                <app-nav-item *ngFor="let item of navigations" [icon]="item.icon" [title]="item.title" [link]="item.link"></app-nav-item>
+                <app-nav-item *ngFor="let item of navigations" 
+                    [icon]="item.icon" 
+                    [title]="item.title" 
+                    [link]="item.link">
+                </app-nav-item>
 
-                <app-combobox-language 
-                    [responsive]="true" 
-                    [languageCode$]="codeFlagTouch" >
-                </app-combobox-language>
+                <app-combobox-language [languageCode$]="codeFlagTouch"></app-combobox-language>
 
                 <li class="nav-item">
                     <button class="btn btn-sm align-center btn-theme border-0" [ngClass]="{'text-white': mode == 'dark_mode'}" (click)="doAlternateMode(mode)">
